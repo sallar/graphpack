@@ -1,8 +1,16 @@
 const cosmiconfig = require('cosmiconfig');
 const webpack = require('webpack');
 const defaultConfig = require('./webpack.config');
+const TypeScriptLoader = require('@endemolshinegroup/cosmiconfig-typescript-loader');
 
-const explorer = cosmiconfig('graphpack').search();
+// Make it possible to use graphpack.config.ts for configuration
+const explorer = cosmiconfig('graphpack', {
+  loaders: {
+    '.ts': {
+      async: TypeScriptLoader,
+    },
+  },
+}).search();
 
 const loadServerConfig = async () => {
   const result = await explorer;

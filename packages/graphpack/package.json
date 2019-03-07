@@ -17,6 +17,7 @@
   "main": "lib/server",
   "dependencies": {
     "@babel/core": "^7.3.4",
+    "@endemolshinegroup/cosmiconfig-typescript-loader": "^1.0.0",
     "apollo-server": "2.4.8",
     "apollo-server-express": "^2.4.8",
     "babel-loader": "^8.0.5",
